@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { SharedModule } from '../../shared.module';
+
 import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
@@ -13,7 +15,9 @@ import { DashboardComponent } from './dashboard.component';
                 path: '',
                 component: DashboardComponent
             }
-        ])
+        ]),
+
+        SharedModule
     ]
 })
 export class DashboardModule { }

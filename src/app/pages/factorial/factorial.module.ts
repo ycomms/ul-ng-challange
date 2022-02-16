@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { SharedModule } from '../../shared.module';
+
 import { FactorialComponent } from './factorial.component';
 
 @NgModule({
@@ -13,7 +15,9 @@ import { FactorialComponent } from './factorial.component';
                 path: '',
                 component: FactorialComponent
             }
-        ])
+        ]),
+
+        SharedModule
     ]
 })
 export class FactorialModule { }

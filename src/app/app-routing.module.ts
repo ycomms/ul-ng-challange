@@ -44,6 +44,12 @@ const routes: Routes = [
         .then(p => p.FactorialModule)
       }
     ]
+  },
+
+  // ---- Unknown route ---- 
+  {
+    path: '**',
+    redirectTo: 'dashboard',
   }
 ];
 
