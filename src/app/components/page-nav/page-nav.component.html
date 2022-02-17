@@ -1,0 +1,15 @@
+<div class="page-nav render-as-row h-align-end">
+
+    <div *ngFor="let navItem of navItems" (click)="navigateToPage(navItem)"
+        class="nav-item" [class.active]="navItem.selected">
+
+        <img *ngIf="navItem.icon; else renderStandardNav" width="20px"
+            [src]="'../../../assets/icons/' + navItem.icon" [alt]="navItem.label">
+
+        <ng-template #renderStandardNav>
+            <span>{{ navItem.label }}</span>
+            <div [class.active-nav]="navItem.selected"></div>
+        </ng-template>        
+    </div>
+
+</div>

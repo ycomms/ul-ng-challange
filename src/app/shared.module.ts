@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 // -- COMPONENTS --
 import { PageTemplateComponent } from './components/page-template/page-template.component';
+import { PageNavComponent } from './components/page-nav/page-nav.component';
 
 @NgModule({
     imports:      [ 
@@ -11,11 +12,13 @@ import { PageTemplateComponent } from './components/page-template/page-template.
     ],
     declarations: [ 
         // -- COMPONENTS --
-        PageTemplateComponent
+        PageTemplateComponent,
+        PageNavComponent
     ],
     exports:      [ 
         // -- COMPONENTS --
-        PageTemplateComponent
+        PageTemplateComponent,
+        PageNavComponent
     ]
 })
 export class SharedModule {}

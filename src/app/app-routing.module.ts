@@ -13,6 +13,9 @@ const fizzBuzzRoute = {
   .then(p => p.FizzBuzzModule)
 };
 
+const dashboardPath = 'dashboard';
+const defaultRoute: string = dashboardPath;
+
 const routes: Routes = [
   // Dashboard
   {
@@ -20,7 +23,7 @@ const routes: Routes = [
     children: [dashboardRoute]
   },
   {
-    path: 'dashboard',
+    path: dashboardPath,
     children: [dashboardRoute]
   },
 
@@ -49,7 +52,7 @@ const routes: Routes = [
   // ---- Unknown route ---- 
   {
     path: '**',
-    redirectTo: 'dashboard',
+    redirectTo: defaultRoute,
   }
 ];
 

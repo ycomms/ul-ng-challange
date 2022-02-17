@@ -1,0 +1,36 @@
+@import '../../../styles-variables.scss';
+
+.page-body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background: linear-gradient(#23445C 0%, #53B8B1 100%);
+
+    .page-header {
+        // 97px looks too big here, wouldn't adjust if I was sure it was intended
+        height: 70px;
+        background-color: $header-bg;
+        padding: {
+            left: 15px;
+            right: 15px;
+        }
+        border-bottom: 1px solid $text-accent-color;
+
+        .page-title {
+            flex-grow: 1;
+            font-size: 41px;
+
+            padding: 0 15px 0 15px;
+        }
+    }
+
+    .body-wrapper {
+        padding: 0px 15px 0px 15px;
+
+        .page-label {
+            font-size: 45px;
+            margin-top: 10px
+        }
+    }
+}

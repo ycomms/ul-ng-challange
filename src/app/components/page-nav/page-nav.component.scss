@@ -1,0 +1,26 @@
+@import '../../../styles-variables.scss';
+
+$default-nav-color: #52B6B0;
+
+.page-nav {
+    flex-grow: 4;
+    margin-top: 10px;
+
+    .nav-item {
+        color: $default-nav-color;
+        cursor: pointer;
+
+        padding: {
+            right: 15px;
+            left: 15px;
+        }
+
+        &.active {
+            color: $text-accent-color;
+        }
+        .active-nav {
+            height: 11px;
+            background-image: linear-gradient(0deg, rgba(82,182,176,0.00) 29%, #61E9E5 100%);
+        }
+    }
+}
