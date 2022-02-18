@@ -1,40 +1,40 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const dashboardRoute = {
-  path: '',
-  loadChildren: () => import('./pages/dashboard/dashboard.module')
-  .then(p => p.DashboardModule)
-};
-
-const fizzBuzzRoute = {
-  path: '',
-  loadChildren: () => import('./pages/fizz-buzz/fizz-buzz.module')
-  .then(p => p.FizzBuzzModule)
-};
 
 const dashboardPath = 'dashboard';
-const defaultRoute: string = dashboardPath;
 
 const routes: Routes = [
   // Dashboard
   {
     path: '',
-    children: [dashboardRoute]
+    redirectTo: dashboardPath
   },
   {
     path: dashboardPath,
-    children: [dashboardRoute]
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./pages/dashboard/dashboard.module')
+        .then(p => p.DashboardModule)
+      }
+    ]
   },
 
   // Fizz-buzz
   {
-    path: 'fizz-buzz',
-    children: [fizzBuzzRoute]
+    path: 'fizzbuzz',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./pages/fizz-buzz/fizz-buzz.module')
+        .then(p => p.FizzBuzzModule)
+      }
+    ]
   },
   {
-    path: 'fizzbuzz',
-    children: [fizzBuzzRoute]
+    path: 'fizz-buzz',
+    redirectTo: 'fizzbuzz'
   },
 
   // Factorial
@@ -52,7 +52,7 @@ const routes: Routes = [
   // ---- Unknown route ---- 
   {
     path: '**',
-    redirectTo: defaultRoute,
+    redirectTo: dashboardPath,
   }
 ];
 

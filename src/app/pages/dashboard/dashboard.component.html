@@ -1,3 +1,9 @@
 <ul-comp-page-template>
-    
+    <section>
+
+        <div *ngFor="let chart of dashboardCharts$ | async">
+            <ul-comp-chart-js [chartData]="chart"></ul-comp-chart-js>
+        </div>
+
+    </section>
 </ul-comp-page-template>

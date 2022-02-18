@@ -18,7 +18,10 @@ import { PageNavComponent } from './components/page-nav/page-nav.component';
     exports:      [ 
         // -- COMPONENTS --
         PageTemplateComponent,
-        PageNavComponent
+        PageNavComponent,
+
+        // -- MODULES --
+        CommonModule
     ]
 })
 export class SharedModule {}
