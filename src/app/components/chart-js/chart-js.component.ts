@@ -18,8 +18,7 @@ import {
     `,
     styles: [`
         .chart-wrapper {
-            position: absolute;
-            width: 600px;
+            min-width: 200px;
         }
         canvas {
             margin: 10px 20px 10px 20px;

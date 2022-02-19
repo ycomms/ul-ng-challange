@@ -1,0 +1,12 @@
+.chart-container {
+    display: flex; flex-flow: row wrap;
+
+    .chart-width {
+        width: 45%;
+    }
+}
+
+.bar-chart-order { order: 1 }
+.dough-chart-order { order: 2 }
+.line-chart-order { order: 3 }
+.scatter-chart-order { order: 4 }

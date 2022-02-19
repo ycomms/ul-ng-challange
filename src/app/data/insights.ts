@@ -109,7 +109,7 @@ export const dashboardCharts = [
 
 
 // Helper - For demo only
-function months(config: any) {
+function months(config: Record<string, number>) {
     const MONTHS = [
         'January',
         'February',
