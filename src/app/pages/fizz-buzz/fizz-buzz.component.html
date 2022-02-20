@@ -1,3 +1,17 @@
 <ul-comp-page-template>
-    
+    <section class="render-as-column h-align-middle">
+
+        <!-- TODO: Review responsiveness later -->
+        <div class="render-as-row h-align-space-between button-group">
+            <ul-comp-button label="Start FizzBuzz" (ulClick)="startFizzBuzz()"></ul-comp-button>
+            
+            <ul-comp-button (ulClick)="stopFizzBuzz()"
+                label="Stop FizzBuzz" 
+                bgColor="rgba(85,30,30,0.50)"
+            ></ul-comp-button>
+        </div>
+
+        <ul-comp-readonly-output [texts]="fizzBuzzOutput"></ul-comp-readonly-output>
+
+    </section>
 </ul-comp-page-template>

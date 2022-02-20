@@ -2,7 +2,10 @@
 
 body {
     margin: 0;
-    // font-family: HiraKakuProN-W3; // TODO
+    // TODO: Can't find specified font, use chartjs' default for now
+    // font-family: HiraKakuProN-W3;
+
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     color: $text-accent-color;
 }
 
@@ -17,6 +20,9 @@ body {
     &.h-align-middle {
         justify-content: center;
     }
+    &.h-align-space-between {
+        justify-content: space-between;
+    }
     &.h-align-end {
         justify-content: end;
     }
@@ -24,4 +30,8 @@ body {
 .render-as-column {
     display: flex;
     flex-direction: column;
+
+    &.h-align-middle {
+        align-items: center;
+    }
 }

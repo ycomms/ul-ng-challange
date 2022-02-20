@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 // -- COMPONENTS --
 import { PageTemplateComponent } from './components/page-template/page-template.component';
 import { PageNavComponent } from './components/page-nav/page-nav.component';
+import { UlReadonlyOutputComponent } from './components-xs/ul-readonly-output.component';
 
 @NgModule({
     imports:      [ 
@@ -13,12 +14,14 @@ import { PageNavComponent } from './components/page-nav/page-nav.component';
     declarations: [ 
         // -- COMPONENTS --
         PageTemplateComponent,
-        PageNavComponent
+        PageNavComponent,
+        UlReadonlyOutputComponent
     ],
     exports:      [ 
         // -- COMPONENTS --
         PageTemplateComponent,
         PageNavComponent,
+        UlReadonlyOutputComponent,
 
         // -- MODULES --
         CommonModule

@@ -1,3 +1,20 @@
 <ul-comp-page-template>
-    
+    <section class="render-as-column h-align-middle">
+
+        <form style="margin-bottom: 90px;" [formGroup]="factorialForm">
+            <div class="item-label">Factorial:</div>
+            <input type="text" class="text-input" formControlName="factorialInput">
+            <div class="validation-msg">{{ validationMessage }}</div>
+        </form>
+
+        <div>
+            <div class="item-label">Result</div>
+            <ul-comp-readonly-output [texts]="factorialOutput"
+                bgColor="rgba(219,255,247,0.20)"
+                width="714px"
+                height="97px"
+            ></ul-comp-readonly-output>
+        </div>
+
+    </section>
 </ul-comp-page-template>

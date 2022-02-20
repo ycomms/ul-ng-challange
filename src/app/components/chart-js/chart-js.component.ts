@@ -41,6 +41,8 @@ export class ChartJsComponent implements OnInit, OnDestroy {
 
     constructor() {
         Chart.register(...this.chartImports);
+        Chart.defaults.font.size = 12
+        Chart.defaults.color = '#fff'
     }
 
     ngOnInit(): void {

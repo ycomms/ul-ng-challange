@@ -1,12 +1,14 @@
 <ul-comp-page-template>
     <section class="chart-container">
 
-        <div *ngFor="let chart of dashboardCharts$ | async" [style.width.%]="isMobileViewport ? 100 : 50"
+        <div *ngFor="let chart of dashboardCharts$ | async" class="chart-item"
+            [style.width.%]="isMobileViewport ? 90 : 40"
             [class.line-chart-order]="isMobileViewport && chart.type === 'bar'"
             [class.dough-chart-order]="isMobileViewport && chart.type === 'doughnut'"
             [class.line-chart-order]="isMobileViewport && chart.type === 'line'"
             [class.scatter-chart-order]="isMobileViewport && chart.type === 'scatter'">
 
+            <div class="chart-title">{{ chart.type | titlecase }} Chart</div>
             <ul-comp-chart-js [chartData]="chart"></ul-comp-chart-js>
 
         </div>
