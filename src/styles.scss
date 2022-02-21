@@ -9,12 +9,20 @@ body {
     color: $text-accent-color;
 }
 
+.page-section {
+    margin-bottom: 25px;
+}
+
 .render-as-row {
     display: flex;
     flex-direction: row;
 
     &.v-align-middle {
         align-items: center;
+    }
+
+    &.wrap {
+        flex-wrap: wrap;
     }
 
     &.h-align-middle {

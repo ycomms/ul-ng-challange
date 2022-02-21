@@ -1,5 +1,5 @@
 <ul-comp-page-template [isMobileViewport]="isMobileViewport$">
-    <section class="chart-container">
+    <section class="page-section chart-container">
 
         <div *ngFor="let chart of dashboardCharts$ | async" class="chart-item"
             [style.width.%]="(isMobileViewport$ | async) ? '90' : '35'"

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
+import { Observable } from "rxjs";
 import { debounceTime } from "rxjs/operators";
 
 import { CommonService } from '../../services/common.service';
@@ -14,7 +15,10 @@ export class FactorialComponent implements OnInit {
     factorialForm: FormGroup = new FormGroup({});
     validationMessage: string = '';
 
+    isMobileViewport$: Observable<boolean>;
+
     constructor(private cService: CommonService) {
+        this.isMobileViewport$ = this.cService.isMobileViewport$;
         this.initializeForm();
     }
 

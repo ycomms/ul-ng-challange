@@ -1,9 +1,10 @@
-<ul-comp-page-template>
-    <section class="render-as-column h-align-middle">
+<ul-comp-page-template [isMobileViewport]="isMobileViewport$">
+    <section class="page-section render-as-column h-align-middle">
 
         <form style="margin-bottom: 90px;" [formGroup]="factorialForm">
             <div class="item-label">Factorial:</div>
-            <input type="text" class="text-input" formControlName="factorialInput">
+            <input type="text" formControlName="factorialInput"
+                [style.width]="(isMobileViewport$ | async) ? '80vw' : '714px'" class="text-input">
             <div class="validation-msg">{{ validationMessage }}</div>
         </form>
 
@@ -11,7 +12,7 @@
             <div class="item-label">Result</div>
             <ul-comp-readonly-output [texts]="factorialOutput"
                 bgColor="rgba(219,255,247,0.20)"
-                width="714px"
+                [width]="(isMobileViewport$ | async) ? '80vw' : '714px'"
                 height="97px"
             ></ul-comp-readonly-output>
         </div>

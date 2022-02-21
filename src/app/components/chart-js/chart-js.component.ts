@@ -12,14 +12,11 @@ import {
 @Component({
     selector: 'ul-comp-chart-js',
     template: `
-    <div class="chart-wrapper">
+    <div>
         <canvas #chartCanvas></canvas>
     </div>
     `,
     styles: [`
-        .chart-wrapper {
-            min-width: 200px;
-        }
         canvas {
             margin: 10px 20px 10px 20px;
             width: 100%;

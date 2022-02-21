@@ -1,8 +1,9 @@
-<ul-comp-page-template>
-    <section class="render-as-column h-align-middle">
+<ul-comp-page-template [isMobileViewport]="isMobileViewport$">
+    <section class="page-section render-as-column h-align-middle">
 
-        <!-- TODO: Review responsiveness later -->
-        <div class="render-as-row h-align-space-between button-group">
+        <div [class.buttons-mobile]="isMobileViewport$ | async"
+            [class.render-as-row]="!(isMobileViewport$ | async)"
+            class="render-as-row h-align-space-between button-group">
             <ul-comp-button label="Start FizzBuzz" (ulClick)="startFizzBuzz()"></ul-comp-button>
             
             <ul-comp-button (ulClick)="stopFizzBuzz()"
@@ -11,7 +12,8 @@
             ></ul-comp-button>
         </div>
 
-        <ul-comp-readonly-output [texts]="fizzBuzzOutput"></ul-comp-readonly-output>
+        <ul-comp-readonly-output [width]="(isMobileViewport$ | async) ? '80vw' : '561px'"
+            [texts]="fizzBuzzOutput"></ul-comp-readonly-output>
 
     </section>
 </ul-comp-page-template>

@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from "@angular/core";
-import { Subscription } from "rxjs";
+import { Observable, Subscription } from "rxjs";
 import { CommonService } from '../../services/common.service';
 
 
@@ -12,7 +12,11 @@ export class FizzBuzzComponent implements OnDestroy {
     subs: Record<string, Subscription> = {};
     fizzBuzzOutput: Array<string> = [];
 
-    constructor(private cService: CommonService) {}
+    isMobileViewport$: Observable<boolean>;
+
+    constructor(private cService: CommonService) {
+        this.isMobileViewport$ = this.cService.isMobileViewport$;
+    }
 
     startFizzBuzz() {
         const countFrom: number = 1;
