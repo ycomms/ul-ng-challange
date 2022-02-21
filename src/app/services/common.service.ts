@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { BehaviorSubject, Observable, Subscription, timer } from "rxjs";
 import { map, take } from 'rxjs/operators';
-import { BigNumber } from 'bignumber.js';
 
 enum UlBreakpoints {
     mobile = '(min-width: 0) and (max-width: 720px)',
