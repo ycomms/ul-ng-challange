@@ -6,12 +6,12 @@ export const dashboardCharts = [
         type: 'doughnut',
         data: {
             labels: [
-              'Red',
-              'Blue',
-              'Yellow'
+              'Africa',
+              'USA',
+              'Asia',
+              'Europe'
             ],
             datasets: [{
-              label: 'My First Dataset',
               data: [12347, 23009, 20129, 15825],
               backgroundColor: [
                 '#F4EEBF',
@@ -19,20 +19,22 @@ export const dashboardCharts = [
                 '#5E98D2',
                 '#C39AE5'
               ],
+              borderWidth: 0,
+              cutout: '65%',
               hoverOffset: 4
             }]
         },
         // TODO: Look into this later
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: {
               legend: {
-                position: 'top',
-              },
-              title: {
-                display: true,
-                text: 'Chart.js Doughnut Chart'
+                display: false
               }
+            },
+            layout: {
+              padding: 20
             }
         }
     },
