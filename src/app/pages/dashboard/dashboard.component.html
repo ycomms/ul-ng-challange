@@ -1,12 +1,12 @@
-<ul-comp-page-template>
+<ul-comp-page-template [isMobileViewport]="isMobileViewport$">
     <section class="chart-container">
 
         <div *ngFor="let chart of dashboardCharts$ | async" class="chart-item"
-            [style.width.%]="isMobileViewport ? 90 : 40"
-            [class.line-chart-order]="isMobileViewport && chart.type === 'bar'"
-            [class.dough-chart-order]="isMobileViewport && chart.type === 'doughnut'"
-            [class.line-chart-order]="isMobileViewport && chart.type === 'line'"
-            [class.scatter-chart-order]="isMobileViewport && chart.type === 'scatter'">
+            [style.width.%]="(isMobileViewport$ | async) ? '90' : '35'"
+            [class.line-chart-order]="(isMobileViewport$ | async) && chart.type === 'bar'"
+            [class.dough-chart-order]="(isMobileViewport$ | async) && chart.type === 'doughnut'"
+            [class.line-chart-order]="(isMobileViewport$ | async) && chart.type === 'line'"
+            [class.scatter-chart-order]="(isMobileViewport$ | async) && chart.type === 'scatter'">
 
             <div class="chart-title">{{ chart.type | titlecase }} Chart</div>
             <ul-comp-chart-js [chartData]="chart"></ul-comp-chart-js>

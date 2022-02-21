@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { debounceTime } from "rxjs/operators";
 
+import { CommonService } from '../../services/common.service';
+
 @Component({
     selector: 'ul-page-factorial',
     templateUrl: './factorial.component.html',
@@ -12,7 +14,7 @@ export class FactorialComponent implements OnInit {
     factorialForm: FormGroup = new FormGroup({});
     validationMessage: string = '';
 
-    constructor() {
+    constructor(private cService: CommonService) {
         this.initializeForm();
     }
 
@@ -27,7 +29,7 @@ export class FactorialComponent implements OnInit {
     }
 
     private monitorFormChanges() {
-        this.factorialForm.valueChanges.pipe(debounceTime(1500)).subscribe({
+        this.factorialForm.valueChanges.pipe(debounceTime(1000)).subscribe({
             next: (formData: { factorialInput: string }) => {
                 this.factorialOutput = [];
                 this.validationMessage = '';
@@ -39,7 +41,7 @@ export class FactorialComponent implements OnInit {
                     this.validationMessage = 'Invalid Input'
                 }
                 else {
-                    const output = this.calculateFactorialOf(Number(input));
+                    const output = this.cService.calculateFactorialOf(Number(input));
 
                     if (input && output !== undefined) {
                         this.factorialOutput = [output.toString()];
@@ -50,13 +52,4 @@ export class FactorialComponent implements OnInit {
         });
     }
 
-    private calculateFactorialOf(value: number): number | undefined {
-        let factorialOutcome: number = 1;
-
-        for (let i = 2; i <= value; i++) {
-            factorialOutcome = factorialOutcome * i;
-        }
-
-        return factorialOutcome;
-    }
 }

@@ -1,13 +1,16 @@
 <div class="page-body">
-    <div class="page-header render-as-row v-align-middle">
-        <img src="../../../assets/icons/Group.png" width="25px">
-        <div class="page-title">Chart Base</div>
+    <div class="page-header render-as-row v-align-middle h-align-space-between">
+        <div class="render-as-row">
+            <img src="../../../assets/icons/Group.png" width="25px">
+            <div class="page-title" *ngIf="!(isMobileViewport | async)">Chart Base</div>
+        </div>
 
         <ul-comp-page-nav [navItems]="navData" 
             (navigationChanged)="navigationChanged($event)"></ul-comp-page-nav>
     </div>
     
     <div class="body-wrapper">
+        <small *ngIf="isMobileViewport | async">Chart Base</small>
         <div class="page-label">{{ currentNav.label }}</div>
         <ng-content></ng-content>
     </div>

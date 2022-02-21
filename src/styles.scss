@@ -23,6 +23,9 @@ body {
     &.h-align-space-between {
         justify-content: space-between;
     }
+    &.h-align-start {
+        justify-content: flex-start;
+    }
     &.h-align-end {
         justify-content: end;
     }
